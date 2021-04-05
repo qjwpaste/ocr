@@ -1,0 +1,37 @@
+错误码	错误信息	说明
+400	Invalid URL	URL错误
+403	Forbidden	没有购买，或者购买次数用尽，或者URL错误
+408	Request Timeout	超时
+413	Payload Too Large	request body太大
+450		后端服务队列满，请求被拒绝，重试即可
+460	Invalid Input - failed to parse json	上传的body不符合json格式要求，是非法json
+461	Invalid Input - json format error - missing key: image	新格式：输入Json中缺少image键
+旧格式：输入Json的inputs值中缺少image键
+461	Invalid Input - json format error - image format error	新格式：输入Json中的image值不是字符串
+旧格式：输入Json中的image值不是包含DataValue和DataType的Json串
+461	Invalid Input - json format error - key inputs missing	旧格式：输入Json中缺少inputs键
+461	Invalid Input - json format error - value of inputs must be a array	旧格式：输入Json中的inputs值不是一个array
+461	Invalid Input - json format error - image DataValue format error	旧格式：输入Json的image键中的DataValue值不是字符串
+461	Invalid Input - json format error - configure format error	旧格式：输入Json中的configure值不是包含DataValue和DataType的Json
+461	Invalid Input - json format error - failed to parse config str: xxx	输入的configure不是合法的Json
+461	Invalid Input - json format error - json parse runtime exception	输入的Json格式不符合要求
+462	Invalid Input - image data error - download image from url error	从URL下载图像失败
+462	Invalid Input - image data error - input image empty, please check your image binary data	输入的image是空字符串
+462	Invalid Input - image data error - image decode failed, please check your image binary data	输入的image解码失败、base64编码的是不合法的图像格式
+462	Invalid Input - image data error - base64decode error, please check your image binary data	输入的image不是合法的base64字符串
+462	Invalid Input - image data error - please remove additional header: data:image/jpg:base64,	请删除base64字符串多余的头： data:image/jpg:base64
+462	Invalid Input - image data error - base64decode error: incorrect padding in base64 string	输入的image不是合法的base64字符串，base64编码的数据长度需要是4的倍数，如果长度不够，需要再末尾加上=补足。
+462	Invalid Input - image data error - base64decode error: base64decode error: incorrect base64 format data	输入的image不是合法的base64字符串，存在非法字符
+462	Invalid Input - image data error - open gif image failed	GIF图像打开失败
+462	Invalid Input - image data error - read gif image failed	GIF图像读取失败
+462	Invalid Input - image data error - decode gif image failed	GIF图像解码失败
+462	Invalid Input - image data error - gif data error, no color map got	GIF获取颜色映射表错误
+462	Invalid Input - image data error - gif image empty	GIF图像是为空
+463	Invalid Input - wrong category	输入图像不是对应服务的图像，如行驶证服务请求的不是行驶证
+464	Invalid Result - algorithm run failed	OCR识别失败
+464	Invalid Result - algorithm runtime exception	OCR识别异常
+464	Invalid Result - xxx	OCR识别失败
+469	Invalid Service - parse result error	内部异常
+469	Invalid Service - error code missing	内部异常
+502	Bad Gateway	识别程序超时并断开连接
+503	Service Unavailable	API网关等待超时断开连接
